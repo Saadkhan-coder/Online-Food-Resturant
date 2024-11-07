@@ -1,0 +1,77 @@
+@{
+    Layout = "~/Views/Shared/_SLayout.cshtml";
+    ViewBag.Title = "OrderNow";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success text-center alert-dismissible fade show" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; width: 300px;">
+        @TempData["SuccessMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger text-center alert-dismissible fade show" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; width: 300px;">
+        @TempData["ErrorMessage"]
+        <button type="button" class="close" style="position: fixed; top: 0%; right: 0%;" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<link rel="shortcut icon" href="~/images/favicon.png" type="">
+<!-- book section -->
+<section class="book_section layout_padding text-center">
+    <div class="container">
+        <div class="heading_container align-items-center">
+            <h2>
+                Order Now
+            </h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form_container mx-auto">
+                    <form action="/Home/Order" method="post">
+                        <div>
+                            <input type="text" class="form-control" name="Name" placeholder="Your Name" required />
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="PhoneNumber" placeholder="Phone Number" required />
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="Address" placeholder="Address" required />
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" name="Email" placeholder="Your Email" required />
+                        </div>
+                        <div>
+                            <select class="form-control nice-select wide" name="FoodItem" required>
+                                <option value="" disabled selected>Select a fast food item</option>
+                                <option value="burger">Burger</option>
+                                <option value="pizza">Pizza</option>
+                                <option value="fries">Fries</option>
+                                <option value="hotdog">Hotdog</option>
+                                <option value="chicken-nuggets">Chicken Nuggets</option>
+                                <option value="sandwich">Sandwich</option>
+                                <option value="tacos">Tacos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="number" class="form-control" name="Quantity" min="1" max="100" step="1" placeholder="Enter Fast Food quantity" required />
+                        </div>
+                        <div class="btn_box">
+                            <button type="submit">Order Now</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end book section -->
+
+

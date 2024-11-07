@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_SLayout.cshtml";
+
+
+
+    ViewBag.Title = "Trace Order";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Tracker</title>
+    <link rel="stylesheet" href="~/css/trace.css">
+</head>
+<body>
+    <div class="tracker-container">
+        <h1>Food Delivery Tracker</h1>
+        <div class="tracker">
+            <div class="stage active" id="orderPlaced">
+                <span class="emoji">📝</span>
+                <p>Order Placed</p>
+            </div>
+            <div class="arrow-line"></div>
+            <div class="stage" id="preparing">
+                <span class="emoji">👨‍🍳</span>
+                <p>Preparing</p>
+            </div>
+            <div class="arrow-line"></div>
+            <div class="stage" id="outForDelivery">
+                <span class="emoji">🚴</span>
+                <p>Out for Delivery</p>
+            </div>
+            <div class="arrow-line"></div>
+            <div class="stage" id="delivered">
+                <span class="emoji">🏠</span>
+                <p>Delivered</p>
+            </div>
+        </div>
+        <button onclick="updateStage()">Next Stage</button>
+    </div>
+
+    <script src="~/js/script.js"></script>
+</body>

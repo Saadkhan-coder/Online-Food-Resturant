@@ -1,0 +1,34 @@
+@{
+    Layout = "~/Views/Shared/_SLayout.cshtml";
+
+
+
+    ViewBag.Title = "Signup";
+}
+<link href="~/css/signup.css" rel="stylesheet" />
+<link rel="shortcut icon" href="~/images/favicon.png" type="">
+<body>
+    <div class="signup-container">
+        <div class="signup-header">
+            <h1>Join Us!</h1>
+            <p>Sign up with your mobile number to get started.</p>
+        </div>
+        <form class="signup-form" action="Index" method="post">
+            <div class="input-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="btn-container">
+                <button type="submit">Sign Up</button>
+            </div>
+            <p class="terms">By signing up, you agree to our <a href="#">Terms and Conditions</a>.</p>
+        </form>
+        
+        @*<div class="admin-btn-container">
+            
+             <a class="admin-button" asp-area="" asp-controller="Home" asp-action="AdminLogin">Admin Login</a>
+        </div>
+        *@
+        
+    </div>
+</body>
